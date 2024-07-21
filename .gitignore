@@ -1,0 +1,16 @@
+# python
+__pycache__
+*.log
+
+# virtual enviroment
+env/
+venv/
+
+# IDE
+/.vscode
+
+# envrioment variables
+.env
+
+# Documentation
+docs/_build/
