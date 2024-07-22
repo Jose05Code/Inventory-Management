@@ -1,6 +1,6 @@
 from pathlib import Path
 from decouple import config
-
+import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY', default='django-insecure$@&!#(7)')
@@ -90,6 +90,11 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+STATIC_URL = '/static/'
+STATICFIELS_DIRS = [BASE_DIR / 'static']
+STATICFIELS_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
 STATIC_URL = 'static/'
