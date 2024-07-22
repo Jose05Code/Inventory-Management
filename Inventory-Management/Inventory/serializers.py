@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Item, Category
+from .models import Item, Category, Stock
 
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,5 +10,11 @@ class ItemSerializer(serializers.ModelSerializer):
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
+        fields = '__all__'
+        read_only_fields = ['id']
+
+class StockSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Stock
         fields = '__all__'
         read_only_fields = ['id']
