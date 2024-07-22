@@ -5,23 +5,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY', default='django-insecure$@&!#(7)')
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*').split(',')
-WSGI_APPLICATION = 'api.wsgi.app'
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='[*]')
+
 
 INSTALLED_APPS = [
-    # Django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # Third-party apps
-    'rest_framework',
-
-    #APIS
-    'Inventory',
 ]
 
 MIDDLEWARE = [
